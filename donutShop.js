@@ -28,7 +28,7 @@
         };
 
         var downtown = new Shop('Downtown', {minCustomers: 8, maxCustomers: 43, avgSold: 4.50});
-            capitoldHill = new Shop('Captiol Hill', {minCustoners: 4, maxCustomers: 37, avgSold: 2.00}),
+            capitoldHill = new Shop('Captiol Hill', {minCustomers: 4, maxCustomers: 37, avgSold: 2.00}),
             southLakeUnion = new Shop('South Lake Union', {minCustomers: 9, maxCustomers: 23, avgSold: 6.33}),
             wedgewood = new Shop('Wedgewood', {minCustomers: 2, maxCustomers: 28, avgSold: 1.25}),
             ballard = new Shop('Ballard', {minCustomers: 8, maxCustomers: 58, avgSold: 3.75});
