@@ -7,11 +7,18 @@
             this.opens = options.opens || '7:00 am';
             this.closes = options.closes || '6:00 pm';
             this.hoursOpen = options.hoursOpen || 11;
+            this.hourlyTotals = [];
         };
         Shop.prototype.render = function() {
-            var el = document.createElement('li');
-            el.innerHTML = 'At the ' + this.locationName + ' store you will need to make ' + this.hourlyAmount() + ' donuts per hour, and ' + this.dailyAmount() + ' for one whole day.';
-            return el;
+            var daily = this.dailyAmount();
+            var elTableRow = document.getElementById(this.locationName);
+            for (var i = 0; i <= this.hoursOpen; i++) {
+                var el = document.createElement('td');
+                el.textContent = this.hourlyTotals[i];
+                elTableRow.appendChild(el);
+            }
+            el.textContent = daily;
+            elTableRow.appendChild(el);
         };
         Shop.prototype.generateRandom = function() {
             return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
@@ -21,22 +28,23 @@
         };
         Shop.prototype.dailyAmount = function() {
             var total = 0;
+            var hourlyDonuts = 0;
             for (var i = 0; i < this.hoursOpen; i++) {
-                total += this.hourlyAmount();
+                hourlyDonuts = this.hourlyAmount();
+                this.hourlyTotals.push(hourlyDonuts);
+                total += hourlyDonuts;
             }
             return total;
         };
+        var downtown = new Shop('downtown', {minCustomers: 8, maxCustomers: 43, avgSold: 4.50}),
+            capitolHill = new Shop('captiolHill', {minCustomers: 4, maxCustomers: 37, avgSold: 2.00}),
+            southLakeUnion = new Shop('southLakeUnion', {minCustomers: 9, maxCustomers: 23, avgSold: 6.33}),
+            wedgewood = new Shop('wedgewood', {minCustomers: 2, maxCustomers: 28, avgSold: 1.25}),
+            ballard = new Shop('ballard', {minCustomers: 8, maxCustomers: 58, avgSold: 3.75});
 
-        var downtown = new Shop('Downtown', {minCustomers: 8, maxCustomers: 43, avgSold: 4.50});
-            capitoldHill = new Shop('Captiol Hill', {minCustomers: 4, maxCustomers: 37, avgSold: 2.00}),
-            southLakeUnion = new Shop('South Lake Union', {minCustomers: 9, maxCustomers: 23, avgSold: 6.33}),
-            wedgewood = new Shop('Wedgewood', {minCustomers: 2, maxCustomers: 28, avgSold: 1.25}),
-            ballard = new Shop('Ballard', {minCustomers: 8, maxCustomers: 58, avgSold: 3.75});
-
-        var list = document.getElementById('store-list');
-        list.appendChild(downtown.render());
-        list.appendChild(capitoldHill.render());
-        list.appendChild(southLakeUnion.render());
-        list.appendChild(wedgewood.render());
-        list.appendChild(ballard.render());
+            downtown.render();
+            capitolHill.render();
+            southLakeUnion.render();
+            wedgewood.render();
+            ballard.render();
 })();

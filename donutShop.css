@@ -1,0 +1,27 @@
+body {
+    background-image: none;
+    background-image: url(http://goo.gl/9kod3w);
+}
+
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    color: #425059;
+    background-color: #BFA78A
+}
+
+table {
+    background-color: #BFA78A;
+    color: #425059;
+    font-family: 'Oswald', sans-serif;
+    border: solid thin;
+    border-color: #425059;
+}
+
+th {
+    background-color: #8C3F4D;
+    color: #F2F2F2;
+}
+
+.tableHeader {
+    background-color: #BFA78A
+}
