@@ -8,9 +8,10 @@
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 </head>
 <body>
+    <div class="container">
     <h1>Top Pot</h1>
-    <img src="http://goo.gl/QvUbXS">
-    <p class="tableHeader">Top Pot Doughnuts Hourly & Daily Projection Chart</tr>
+    <img src="http://goo.gl/QvUbXS" id="image1">
+    <p class="tableHeader">Top Pot Doughnuts Hourly & Daily Projection Chart</p>
         <table id="table">
             <tr>
                 <th>Location:</th>
@@ -33,7 +34,17 @@
             <tr id="wedgewood"><th>Wedgewood</th></tr>
             <tr id="ballard"><th>Ballard</th></tr>
         </table>
-        <form id="formInput"></form>
+        <form id="formInput">
+            <input class="newInput" placeholder="Location Name" id="locationName">
+            <input class="newInput" placeholder="Minimum Customers" id="minimumCustomers">
+            <input class="newInput" placeholder="Maximum Customers" id="maximumCustomers">
+            <input class="newInput" placeholder="Average Sold" id="averageSold">
+            <button class="newInput" type="submit">Add New Store</button>
+        </form>
     <script src="donutShop.js"></script>
+    <footer>
+        <button class="funButton">FUN BUTTON</button>
+    </footer>
+    </div>
 </body>
 </html>

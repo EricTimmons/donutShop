@@ -8,6 +8,7 @@
             this.closes = options.closes || '6:00 pm';
             this.hoursOpen = options.hoursOpen || 11;
             this.hourlyTotals = [];
+            this.listOfShops = [];
         };
         Shop.prototype.render = function() {
             var daily = this.dailyAmount();
@@ -36,6 +37,7 @@
             }
             return total;
         };
+
         var downtown = new Shop('downtown', {minCustomers: 8, maxCustomers: 43, avgSold: 4.50}),
             capitolHill = new Shop('captiolHill', {minCustomers: 4, maxCustomers: 37, avgSold: 2.00}),
             southLakeUnion = new Shop('southLakeUnion', {minCustomers: 9, maxCustomers: 23, avgSold: 6.33}),

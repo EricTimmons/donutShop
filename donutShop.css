@@ -1,27 +1,70 @@
 body {
     background-image: none;
     background-image: url(http://goo.gl/9kod3w);
+    position: relative;
+    width: 900px;
+    height: 900px;
 }
-
 h1 {
     font-family: 'Julius Sans One', sans-serif;
     color: #425059;
-    background-color: #BFA78A
+    background-color: #BFA78A;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
 }
-
+.container {
+    width: 780px;
+    margin: 0 auto;
+    background-color: #5C5C5C;
+    position: fixed;
+}
 table {
     background-color: #BFA78A;
     color: #425059;
     font-family: 'Oswald', sans-serif;
     border: solid thin;
     border-color: #425059;
+    text-align: center;
+    margin: 0 auto;
 }
-
 th {
-    background-color: #8C3F4D;
+    background-color: #AB957B;
+    color: #425059;
+}
+p {
+    font-family: 'Oswald', sans-serif;
+    background-color: #BFA78A;
+    color: #425059;
+    text-align: center;
+    width: 780px;
+    margin: 0 auto;
+}
+input {
+    border: solid thin;
+    border-color: #425059;
+}
+button {
+    background-color: #425059;
+    border-radius: 50px;
+    border-color: #F2F2F2;
     color: #F2F2F2;
 }
-
-.tableHeader {
-    background-color: #BFA78A
+#formInput {
+    margin: 0 left;
+    width: 100px;
+}
+.funButton {
+    border-color: #EFFF00;
+    background-color: #FF00C5;
+    color: #6FFF09;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+}
+#image1 {
+    margin: 0 auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
 }
