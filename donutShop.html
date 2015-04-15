@@ -9,42 +9,46 @@
 </head>
 <body>
     <div class="container">
-    <h1>Top Pot</h1>
-    <img src="http://goo.gl/QvUbXS" id="image1">
-    <p class="tableHeader">Top Pot Doughnuts Hourly & Daily Projection Chart</p>
-        <table id="table">
-            <tr>
-                <th>Location:</th>
-                <th>7:00am</th>
-                <th>8:00am</th>
-                <th>9:00am</th>
-                <th>10:00am</th>
-                <th>11:00am</th>
-                <th>12:00pm</th>
-                <th>1:00pm</th>
-                <th>2:00pm</th>
-                <th>3:00pm</th>
-                <th>4:00pm</th>
-                <th>5:00pm</th>
-                <th>Daily Total</th>
-            </tr>
-            <tr id="downtown"><th>Downtown</th</tr>
-            <tr id="captiolHill"><th>Capitol Hill</th></tr>
-            <tr id="southLakeUnion"><th>South Lake Union</th></tr>
-            <tr id="wedgewood"><th>Wedgewood</th></tr>
-            <tr id="ballard"><th>Ballard</th></tr>
-        </table>
-        <form id="formInput">
-            <input class="newInput" placeholder="Location Name" id="locationName">
-            <input class="newInput" placeholder="Minimum Customers" id="minimumCustomers">
-            <input class="newInput" placeholder="Maximum Customers" id="maximumCustomers">
-            <input class="newInput" placeholder="Average Sold" id="averageSold">
-            <button class="newInput" type="submit">Add New Store</button>
-        </form>
-    <script src="donutShop.js"></script>
-    <footer>
-        <button class="funButton">FUN BUTTON</button>
-    </footer>
+        <h1>Top Pot</h1>
+        <img src="http://goo.gl/QvUbXS" id="image1">
+        <p class="tableHeader">Top Pot Doughnuts Hourly & Daily Projection Chart</p>
+            <table id="table">
+                <tr>
+                    <th>Location:</th>
+                    <th>7:00am</th>
+                    <th>8:00am</th>
+                    <th>9:00am</th>
+                    <th>10:00am</th>
+                    <th>11:00am</th>
+                    <th>12:00pm</th>
+                    <th>1:00pm</th>
+                    <th>2:00pm</th>
+                    <th>3:00pm</th>
+                    <th>4:00pm</th>
+                    <th>5:00pm</th>
+                    <th>Daily Total</th>
+                </tr>
+                <tr id="downtown"><th>Downtown</th</tr>
+                <tr id="captiolHill"><th>Capitol Hill</th></tr>
+                <tr id="southLakeUnion"><th>South Lake Union</th></tr>
+                <tr id="wedgewood"><th>Wedgewood</th></tr>
+                <tr id="ballard"><th>Ballard</th></tr>
+            </table>
+            <form id="formInput">
+                <input type="text" placeholder="Location Name" name="locN">
+                <input type="text" placeholder="Minimum Customers" name="minC">
+                <input type="text" placeholder="Maximum Customers" name="maxC">
+                <input type="text" placeholder="Average Sold" name="avgS">
+                <button class="newInput" type="submit">Add New Store</button>
+            </form>
+        <script src="donutShop.js"></script>
+        <div id="funDiv">
+            <footer>
+                <form action="http://www.nyan.cat/original">
+                    <button id="funButton" type="submit">FUN BUTTON</button>
+                </form>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

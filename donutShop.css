@@ -1,10 +1,12 @@
+
 body {
     background-image: none;
     background-image: url(http://goo.gl/9kod3w);
-    position: relative;
     width: 900px;
     height: 900px;
+    margin: 0 auto;
 }
+
 h1 {
     font-family: 'Julius Sans One', sans-serif;
     color: #425059;
@@ -12,13 +14,15 @@ h1 {
     text-align: center;
     width: 200px;
     margin: 0 auto;
+    `
 }
+
 .container {
     width: 780px;
     margin: 0 auto;
     background-color: #5C5C5C;
-    position: fixed;
 }
+
 table {
     background-color: #BFA78A;
     color: #425059;
@@ -27,11 +31,17 @@ table {
     border-color: #425059;
     text-align: center;
     margin: 0 auto;
+    transition: all 500ms cubic-bezier(0.560, 0.250, 0.445, 0.835);
 }
+table:hover {
+    transform: scale(1.1);
+}
+
 th {
     background-color: #AB957B;
     color: #425059;
 }
+
 p {
     font-family: 'Oswald', sans-serif;
     background-color: #BFA78A;
@@ -40,31 +50,45 @@ p {
     width: 780px;
     margin: 0 auto;
 }
+
 input {
     border: solid thin;
     border-color: #425059;
 }
+
 button {
     background-color: #425059;
     border-radius: 50px;
     border-color: #F2F2F2;
     color: #F2F2F2;
+
 }
+
 #formInput {
     margin: 0 left;
     width: 100px;
 }
-.funButton {
+footer {
+    margin: 0 auto;
+    width: 30px;
+}
+#funButton {
     border-color: #EFFF00;
     background-color: #FF00C5;
     color: #6FFF09;
     width: 60px;
     height: 60px;
-    position: absolute;
+    margin: center;
+    transition: all 150ms cubic-bezier(0,2.02,1,-0.98);
 }
+#funButton:hover {
+    transform: scale(20);
+}
+
 #image1 {
     margin: 0 auto;
     position: relative;
     width: 100px;
     height: 100px;
 }
+
