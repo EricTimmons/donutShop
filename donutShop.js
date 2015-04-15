@@ -1,15 +1,16 @@
 (function() {
-    var Shop = function(locationName, options) {
+    var Shop = function(locationName, Options) {
             this.locationName = locationName;
-            this.minCustomers = options.minCustomers;
-            this.maxCustomers = options.maxCustomers;
-            this.avgSold = options.avgSold;
-            this.opens = options.opens || '7:00 am';
-            this.closes = options.closes || '6:00 pm';
-            this.hoursOpen = options.hoursOpen || 11;
+            this.minCustomers = Options.minCustomers;
+            this.maxCustomers = Options.maxCustomers;
+            this.avgSold = Options.avgSold;
+            this.opens = Options.opens || '7:00 am';
+            this.closes = Options.closes || '6:00 pm';
+            this.hoursOpen = Options.hoursOpen || 11;
             this.hourlyTotals = [];
-            this.listOfShops = [];
         };
+
+
         Shop.prototype.render = function() {
             var daily = this.dailyAmount();
             var elTableRow = document.getElementById(this.locationName);
@@ -36,6 +37,35 @@
                 total += hourlyDonuts;
             }
             return total;
+        };
+
+
+        var shopList = document.getElementById('table');
+        var formInput = document.getElementById('formInput');
+        var shopData = [];
+
+        var handleSubmit = function(event) {
+            event.preventDefault();
+
+            var createShop = new Shop(event.target.locN.value,
+                {minCustomers: event.target.minC.value,
+                maxCustomers: event.target.maxC.value,
+                avgSold: event.target.avgS.value});
+            event.target.locN.value = null;
+            event.target.minC.value = null;
+            event.target.maxC.value = null;
+            event.target.avgS.value = null;
+            shopData.push(createShop);
+            renderAllShops();
+        };
+
+        formInput.addEventListener('submit', handleSubmit);
+
+        var renderAllShops = function() {
+            shopList.innerHTML = ' ';
+            shopData.forEach(function(shop) {
+                shopList.appendChild(shop.render());
+            });
         };
 
         var downtown = new Shop('downtown', {minCustomers: 8, maxCustomers: 43, avgSold: 4.50}),
